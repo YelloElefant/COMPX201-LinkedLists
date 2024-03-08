@@ -9,8 +9,12 @@ public class node {
         this.next = null;
     }
 
-    public void print() {
+    public void println() {
         System.out.println("Value: " + value);
+    }
+
+    public void print() {
+        System.out.print(value + " ");
     }
 
 }

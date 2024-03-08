@@ -76,12 +76,21 @@ public class StrLinkedList {
         }
     }
 
+    public void println() {
+        node current = this.head;
+        while (current != null) {
+            current.println();
+            current = current.next;
+        }
+    }
+
     public void print() {
         node current = this.head;
         while (current != null) {
             current.print();
             current = current.next;
         }
+        System.out.println('\n');
     }
 
 }

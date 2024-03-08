@@ -21,6 +21,8 @@ public class LottoDraw {
             String randomNumber = possibleNumbersList.getValueAt(randomIndex);
             winningNumbersList.add(randomNumber);
         }
+        System.out.println("Winning Numbers are...");
+        winningNumbersList.print();
 
         // generate 100 lotto tickets and check if any of them are winners each
         // conataining 6 numbers
@@ -38,13 +40,11 @@ public class LottoDraw {
                 }
             }
 
-            // simplyfy the next section
-
             if (matches < 3) {
-                // System.out.println("Ticket(" + (i + 1) + ")" + "wins: $0");
+                // System.out.println("Ticket(" + (i + 1) + ") " + "wins: $0");
             } else {
                 String numZero = new String(new char[matches - 2]).replace("\0", "0");
-                System.out.println("Ticket(" + (i + 1) + ")" + "wins: $1" + numZero);
+                System.out.println("Ticket(" + (i + 1) + ") " + "wins: $1" + numZero);
 
             }
         }
