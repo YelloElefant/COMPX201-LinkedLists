@@ -37,23 +37,14 @@ public class LottoDraw {
                     matches++;
                 }
             }
+
+            // simplyfy the next section
+
             if (matches < 3) {
                 // System.out.println("Ticket(" + (i + 1) + ")" + "wins: $0");
-            }
-            if (matches == 3) {
-                System.out.println("Ticket(" + (i + 1) + ")" + "wins: $10");
-
-            }
-            if (matches == 4) {
-                System.out.println("Ticket(" + (i + 1) + ")" + "wins: $100");
-
-            }
-            if (matches == 5) {
-                System.out.println("Ticket(" + (i + 1) + ")" + "wins: $1000");
-
-            }
-            if (matches == 6) {
-                System.out.println("Ticket(" + (i + 1) + ")" + "wins: $10000");
+            } else {
+                String numZero = new String(new char[matches - 2]).replace("\0", "0");
+                System.out.println("Ticket(" + (i + 1) + ")" + "wins: $1" + numZero);
 
             }
         }
