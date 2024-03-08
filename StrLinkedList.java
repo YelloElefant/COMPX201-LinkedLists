@@ -27,7 +27,7 @@ public class StrLinkedList {
     }
 
     // has value at index method
-    public int getValueAt(int index) {
+    public String getValueAt(int index) {
         node current = this.head;
         int count = 0;
         while (current != null) {
@@ -37,11 +37,11 @@ public class StrLinkedList {
             count++;
             current = current.next;
         }
-        return -1;
+        return "error";
     }
 
     // make has value method
-    public boolean hasValue(int value) {
+    public boolean hasValue(String value) {
         node current = this.head;
         while (current != null) {
             if (current.value == value) {
@@ -52,13 +52,13 @@ public class StrLinkedList {
         return false;
     }
 
-    public void add(int value) {
+    public void add(String value) {
         node newHead = new node(value);
         newHead.next = this.head;
         this.head = newHead;
     }
 
-    public void remove(int value) {
+    public void remove(String value) {
         if (this.head == null) {
             return;
         }
