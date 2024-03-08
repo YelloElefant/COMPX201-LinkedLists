@@ -2,7 +2,7 @@ package LinkedLists;
 
 import LinkedLists.*;
 
-public class main {
+public class LottoDraw {
     public static void main(String[] args) {
         StrLinkedList list = new StrLinkedList();
         list.add(1);

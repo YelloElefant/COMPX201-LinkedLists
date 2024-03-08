@@ -10,12 +10,23 @@ public class StrLinkedList {
         this.head = null;
     }
 
+    // get length method
+    public int getLength() {
+        node current = this.head;
+        int count = 0;
+        while (current != null) {
+            count++;
+            current = current.next;
+        }
+        return count;
+    }
+
     // isEmpty method
     public boolean isEmpty() {
         return this.head == null;
     }
 
-    // make has value at index method
+    // has value at index method
     public int getValueAt(int index) {
         node current = this.head;
         int count = 0;
