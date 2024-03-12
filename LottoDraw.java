@@ -16,6 +16,20 @@ public class LottoDraw {
 
     private static final int TICKETS = 1000000;
 
+    /**
+     * this is the main class of the program that simulates a lotto draw
+     * it takes 6 random numbers from 1 - 40 and then generates a pre determind
+     * amount of tickets
+     * each ticket contains 6 random numbers from 1 - 40
+     * it then checks these 6 values against the winning numbers
+     * winning numbers are also generated randomly from 1 - 40
+     * then prints out what each ticket won based on the amount of matches they have
+     * with the winning numbers
+     * 
+     * @author Alexander Trotter
+     * @version 1.0
+     * @since 2024-03-13
+     */
     public static void main(String[] args) {
 
         // add 1 - 40 to a new StrLinkedList as strings
