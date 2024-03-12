@@ -8,11 +8,11 @@ public class node {
         this.next = null;
     }
 
-    public void println() {
+    public void print() {
         System.out.println("Value: " + value);
     }
 
-    public void print() {
+    public void printInLine() {
         System.out.print(value + " ");
     }
 
