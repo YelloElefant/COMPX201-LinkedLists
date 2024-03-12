@@ -1,4 +1,3 @@
-package LinkedLists;
 
 public class node {
     public String value;

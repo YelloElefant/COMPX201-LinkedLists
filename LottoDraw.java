@@ -1,14 +1,14 @@
-package LinkedLists;
-
-import LinkedLists.*;
 
 public class LottoDraw {
+
+    private static final int TICKETS = 1000000;
+
     public static void main(String[] args) {
 
         // add 1 - 40 to a new StrLinkedList as strings
-
         StrLinkedList possibleNumbersList = new StrLinkedList();
         for (int i = 1; i <= 40; i++) {
+
             possibleNumbersList.add(Integer.toString(i));
 
         }
@@ -26,7 +26,7 @@ public class LottoDraw {
 
         // generate 100 lotto tickets and check if any of them are winners each
         // conataining 6 numbers
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < TICKETS; i++) {
             StrLinkedList ticket = new StrLinkedList();
             for (int j = 0; j < 6; j++) {
                 int randomIndex = (int) (Math.random() * possibleNumbersList.getLength());

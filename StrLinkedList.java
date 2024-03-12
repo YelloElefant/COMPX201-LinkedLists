@@ -1,7 +1,5 @@
-package LinkedLists;
 
 import java.util.random.*;
-import LinkedLists.node;
 
 public class StrLinkedList {
     public node head;
