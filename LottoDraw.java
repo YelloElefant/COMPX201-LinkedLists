@@ -1,10 +1,11 @@
 /**
  * this is the main class of the program that simulates a lotto draw
- * it takes 6 random numbers from 1 - 40 and then generates a pre determind
+ * it takes 6 random numbers from 1 - MAX_NUMBER and then generates a pre
+ * determind
  * amount of tickets
- * each ticket contains 6 random numbers from 1 - 40
+ * each ticket contains 6 random numbers from 1 - MAX_NUMBER
  * it then checks these 6 values against the winning numbers
- * winning numbers are also generated randomly from 1 - 40
+ * winning numbers are also generated randomly from 1 - MAX_NUMBER
  * then prints out what each ticket won based on the amount of matches they have
  * with the winning numbers
  * 
@@ -14,28 +15,31 @@
  */
 public class LottoDraw {
 
-    private static final int TICKETS = 1000000;
+    /**
+     * the amount of tickets to generate
+     */
+    private static final int TICKETS = 100;
 
     /**
-     * this is the main class of the program that simulates a lotto draw
-     * it takes 6 random numbers from 1 - 40 and then generates a pre determind
-     * amount of tickets
-     * each ticket contains 6 random numbers from 1 - 40
-     * it then checks these 6 values against the winning numbers
-     * winning numbers are also generated randomly from 1 - 40
-     * then prints out what each ticket won based on the amount of matches they have
-     * with the winning numbers
+     * the maximum number that can be generated for the winning/possible numbers
+     */
+    private static final int MAX_NUMBER = 40;
+
+    /**
+     * the main method of the program
+     * it generates the winning numbers and then generates the tickets
+     * and checks them against the winning numbers
+     * then prints out what each ticket won
+     * based on how many matches they have with the winning numbers
      * 
-     * @author Alexander Trotter
-     * @version 1.0
-     * @since 2024-03-13
+     * @param args - the command line arguments
      */
     public static void main(String[] args) {
 
         // add 1 - 40 to a new StrLinkedList as strings
         StrLinkedList possibleNumbersList = new StrLinkedList();
 
-        for (int i = 1; i <= 40; i++) {
+        for (int i = 1; i <= MAX_NUMBER; i++) {
             possibleNumbersList.add(Integer.toString(i));
         }
 
