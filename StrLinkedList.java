@@ -65,7 +65,7 @@ public class StrLinkedList {
             current = current.next;
 
         }
-        return "error";
+        throw new IndexOutOfBoundsException("Index does not exsist in the list");
     }
 
     /**
