@@ -51,6 +51,7 @@ public class StrLinkedList {
      * 
      * @param index - the index to get the value from
      * @return String - the value at the index
+     * @throws IndexOutOfBoundsException - if the index does not exist in the list
      */
     public String getValueAt(int index) {
         node current = this.head;
