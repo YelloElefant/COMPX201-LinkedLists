@@ -26,11 +26,16 @@ public class LottoDraw {
     private static final int TICKETS = 100;
 
     /**
-     * the maximum number that can be generated for the winning/possible numbers
+     * the amount of possible numbers
      */
     private static final int MAX_NUMBER = 40;
 
+    /**
+     * the amount of winning numbers
+     */
     private static final int WINNING_NUMBERS = 6;
+
+    public static final StrLinkedList PRIZES = new StrLinkedList();
 
     /**
      * the main method of the program
@@ -43,16 +48,17 @@ public class LottoDraw {
      */
     public static void main(String[] args) {
 
-        // add 1 - 40 to a new StrLinkedList as strings
+        // add 1 - MAX_NUMBER to a new StrLinkedList as strings
         StrLinkedList possibleNumbersList = new StrLinkedList();
 
         for (int i = 1; i <= MAX_NUMBER; i++) {
             possibleNumbersList.add(Integer.toString(i));
         }
+        System.out.println("Possible Numbers are...");
+        possibleNumbersList.printInLine();
 
         // randomly select WINNING_NUMBERS amount of the numbers from
-        // possibleNumbersList and add them to
-        // another StrLinkedList
+        // possibleNumbersList and add them to winningNumbersList
         StrLinkedList winningNumbersList = new StrLinkedList();
 
         for (int i = 0; i < WINNING_NUMBERS; i++) {
@@ -61,17 +67,19 @@ public class LottoDraw {
             winningNumbersList.add(randomNumber);
         }
 
-        System.out.println("Winning Numbers are...");
+        System.out.println("\nWinning Numbers are...");
         winningNumbersList.printInLine();
 
+        System.out.println("\nTickets and there winnings...");
         // generate 100 lotto tickets and check if any of them are winners each
         // conataining WINNING_NUMBERS amount of numbers
         for (int i = 0; i < TICKETS; i++) {
+
+            // start new ticket
             StrLinkedList ticket = new StrLinkedList();
 
             // randomly select WINNING_NUMBERS of the numbers from possibleNumbersList and
-            // add them to the
-            // ticket
+            // add them to the ticket
             for (int j = 0; j < WINNING_NUMBERS; j++) {
                 int randomIndex = (int) (Math.random() * possibleNumbersList.getLength());
                 String randomNumber = possibleNumbersList.getValueAt(randomIndex);
@@ -89,10 +97,12 @@ public class LottoDraw {
 
             // print out the results and what the ticket won
             if (matches < 3) {
-                System.out.println("Ticket(" + (i + 1) + ") " + "wins: $0");
+                System.out.print("Ticket(" + (i + 1) + ") " + "wins: $0, ");
+                ticket.printInLine();
             } else {
                 String numZero = new String(new char[matches - 2]).replace("\0", "0");
-                System.out.println("Ticket(" + (i + 1) + ") " + "wins: $1" + numZero);
+                System.out.print("Ticket(" + (i + 1) + ") " + "wins: $1" + numZero + ", ");
+                ticket.printInLine();
             }
         }
 

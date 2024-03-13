@@ -132,6 +132,7 @@ public class StrLinkedList {
      */
     public void print() {
         node current = this.head;
+
         while (current != null) {
             current.print();
             current = current.next;
@@ -143,11 +144,15 @@ public class StrLinkedList {
      */
     public void printInLine() {
         node current = this.head;
+
         while (current != null) {
             current.printInLine();
+            if (current.next != null) {
+                System.out.print("->");
+            }
             current = current.next;
         }
-        System.out.println('\n');
+        System.out.print('\n');
     }
 
 }

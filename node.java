@@ -40,7 +40,7 @@ public class node {
      * Method to print the value of the node in line
      */
     public void printInLine() {
-        System.out.print(value + " ");
+        System.out.print(value);
     }
 
 }
