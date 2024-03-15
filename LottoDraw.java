@@ -79,11 +79,12 @@ public class LottoDraw {
             StrLinkedList ticket = new StrLinkedList();
 
             // randomly select WINNING_NUMBERS of the numbers from possibleNumbersList and
-            // add them to the ticket
+            // add them to the ticket and make sure there are no duplicates
             for (int j = 0; j < WINNING_NUMBERS; j++) {
                 int randomIndex = (int) (Math.random() * possibleNumbersList.getLength());
                 String randomNumber = possibleNumbersList.getValueAt(randomIndex);
                 ticket.add(randomNumber);
+                possibleNumbersList.remove(randomNumber);
             }
 
             int matches = 0;
