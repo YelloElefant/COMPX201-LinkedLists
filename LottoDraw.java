@@ -21,23 +21,6 @@
 public class LottoDraw {
 
     /**
-     * the amount of tickets to generate
-     */
-    private static final int TICKETS = 100;
-
-    /**
-     * the amount of possible numbers
-     */
-    private static final int MAX_NUMBER = 40;
-
-    /**
-     * the amount of winning numbers
-     */
-    private static final int WINNING_NUMBERS = 6;
-
-    public static final StrLinkedList PRIZES = new StrLinkedList();
-
-    /**
      * the main method of the program
      * it generates the winning numbers and then generates the tickets
      * and checks them against the winning numbers
@@ -47,6 +30,35 @@ public class LottoDraw {
      * @param args - the command line arguments
      */
     public static void main(String[] args) {
+        /**
+         * the amount of tickets to generate
+         */
+        final int TICKETS = 100;
+
+        /**
+         * the amount of possible numbers
+         */
+        final int MAX_NUMBER = 40;
+
+        /**
+         * the amount of winning numbers
+         */
+        final int WINNING_NUMBERS = 6;
+
+        /**
+         * the list of prizes
+         */
+        final StrLinkedList PRIZES = new StrLinkedList();
+
+        // add the prizes to the list
+        PRIZES.add("$100000");
+        PRIZES.add("$10000");
+        PRIZES.add("$1000");
+        PRIZES.add("$100");
+        PRIZES.add("$10");
+        PRIZES.add("$0");
+        PRIZES.add("$0");
+        PRIZES.add("$0");
 
         // add 1 - MAX_NUMBER to a new StrLinkedList as strings
         StrLinkedList possibleNumbersList = new StrLinkedList();
@@ -87,6 +99,11 @@ public class LottoDraw {
                 possibleNumbersList.remove(randomNumber);
             }
 
+            // add the numbers back to the possibleNumbersList
+            for (int j = 0; j < WINNING_NUMBERS; j++) {
+                possibleNumbersList.add(ticket.getValueAt(j));
+            }
+
             int matches = 0;
 
             // check how many matches the ticket has with the winning numbers
@@ -97,14 +114,8 @@ public class LottoDraw {
             }
 
             // print out the results and what the ticket won
-            if (matches < 3) {
-                System.out.print("Ticket(" + (i + 1) + ") " + "wins: $0, ");
-                ticket.printInLine();
-            } else {
-                String numZero = new String(new char[matches - 2]).replace("\0", "0");
-                System.out.print("Ticket(" + (i + 1) + ") " + "wins: $1" + numZero + ", ");
-                ticket.printInLine();
-            }
+            System.out.print("Ticket(" + (i + 1) + ") " + "wins: " + PRIZES.getValueAt(matches) + ", ");
+            ticket.printInLine();
         }
 
     }
