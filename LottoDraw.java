@@ -104,6 +104,7 @@ public class LottoDraw {
                 possibleNumbersList.add(ticket.getValueAt(j));
             }
 
+            // to count how many matches the ticket has with the winning numbers
             int matches = 0;
 
             // check how many matches the ticket has with the winning numbers
