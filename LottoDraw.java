@@ -35,7 +35,7 @@ public class LottoDraw {
      */
     private static final int WINNING_NUMBERS = 6;
 
-    public static final StrLinkedList PRIZES = new StrLinkedList();
+    public static StrLinkedList PRIZES = new StrLinkedList();
 
     /**
      * the main method of the program
