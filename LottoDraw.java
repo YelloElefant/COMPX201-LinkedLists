@@ -62,7 +62,6 @@ public class LottoDraw {
 
         // add 1 - MAX_NUMBER to a new StrLinkedList as strings
         StrLinkedList possibleNumbersList = new StrLinkedList();
-
         for (int i = 1; i <= MAX_NUMBER; i++) {
             possibleNumbersList.add(Integer.toString(i));
         }
@@ -72,7 +71,6 @@ public class LottoDraw {
         // randomly select WINNING_NUMBERS amount of the numbers from
         // possibleNumbersList and add them to winningNumbersList
         StrLinkedList winningNumbersList = new StrLinkedList();
-
         for (int i = 0; i < WINNING_NUMBERS; i++) {
             int randomIndex = (int) (Math.random() * possibleNumbersList.getLength());
             String randomNumber = possibleNumbersList.getValueAt(randomIndex);
@@ -81,8 +79,8 @@ public class LottoDraw {
 
         System.out.println("\nWinning Numbers are...");
         winningNumbersList.printInLine();
-
         System.out.println("\nTickets and there winnings...");
+
         // generate 100 lotto tickets and check if any of them are winners each
         // conataining WINNING_NUMBERS amount of numbers
         for (int i = 0; i < TICKETS; i++) {
