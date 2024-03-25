@@ -30,24 +30,16 @@ public class LottoDraw {
      * @param args - the command line arguments
      */
     public static void main(String[] args) {
-        /**
-         * the amount of tickets to generate
-         */
+        // the amount of tickets to generate
         final int TICKETS = 100;
 
-        /**
-         * the amount of possible numbers
-         */
+        // the amount of possible numbers
         final int MAX_NUMBER = 40;
 
-        /**
-         * the amount of winning numbers
-         */
+        // the amount of winning numbers
         final int WINNING_NUMBERS = 6;
 
-        /**
-         * the list of prizes
-         */
+        // the list of prizes
         final StrLinkedList PRIZES = new StrLinkedList();
 
         // add the prizes to the list

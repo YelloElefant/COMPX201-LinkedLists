@@ -29,6 +29,7 @@ public class StrLinkedList {
         node current = this.head;
         int count = 0;
 
+        // loop through the list and increment the count
         while (current != null) {
             count++;
             current = current.next;
@@ -57,11 +58,11 @@ public class StrLinkedList {
         node current = this.head;
         int count = 0;
 
+        // loop through the list until the index is reached
         while (current != null) {
             if (count == index) {
                 return current.value;
             }
-
             count++;
             current = current.next;
 
@@ -78,6 +79,7 @@ public class StrLinkedList {
     public boolean hasValue(String value) {
         node current = this.head;
 
+        // loop through the list until the value is found
         while (current != null) {
             if (current.value == value) {
                 return true;
@@ -106,10 +108,12 @@ public class StrLinkedList {
      * @param value - the value to remove
      */
     public void remove(String value) {
+        // if head is null, return
         if (this.head == null) {
             return;
         }
 
+        // if head is the value, set head to the next node
         if (this.head.value == value) {
             this.head = this.head.next;
             return;
@@ -117,6 +121,7 @@ public class StrLinkedList {
 
         node current = this.head;
 
+        // loop through the list until the value is found
         while (current.next != null) {
             if (current.next.value == value) {
                 current.next = current.next.next;
@@ -133,6 +138,7 @@ public class StrLinkedList {
     public void print() {
         node current = this.head;
 
+        // loop through the list and print each node
         while (current != null) {
             current.print();
             current = current.next;
@@ -145,6 +151,7 @@ public class StrLinkedList {
     public void printInLine() {
         node current = this.head;
 
+        // loop through the list and print each node
         while (current != null) {
             current.printInLine();
             if (current.next != null) {
