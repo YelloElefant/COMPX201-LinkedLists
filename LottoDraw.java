@@ -1,16 +1,16 @@
 /**
  * this is the main class of the program that simulates a lotto draw
- * it takes {@link LottoDraw#WINNING_NUMBERS} random numbers from 1 -
- * {@link LottoDraw#MAX_NUMBER} and then
+ * it takes WINNING_NUMBERS random numbers from 1 -
+ * MAX_NUMBER and then
  * generates a pre
  * determind
  * amount of tickets
- * each ticket contains {@link LottoDraw#WINNING_NUMBERS} amount of random
- * numbers from 1 - {@link LottoDraw#MAX_NUMBER}
- * it then checks these {@link LottoDraw#WINNING_NUMBERS} values against the
+ * each ticket contains WINNING_NUMBERS amount of random
+ * numbers from 1 - MAX_NUMBER
+ * it then checks these WINNING_NUMBERS values against the
  * winning numbers
  * winning numbers are also generated randomly from 1 -
- * {@link LottoDraw#MAX_NUMBER}
+ * MAX_NUMBER
  * then prints out what each ticket won based on the amount of matches they have
  * with the winning numbers
  * 
