@@ -43,14 +43,18 @@ public class LottoDraw {
         final StrLinkedList PRIZES = new StrLinkedList();
 
         // add the prizes to the list
-        PRIZES.add("$100000");
-        PRIZES.add("$10000");
-        PRIZES.add("$1000");
-        PRIZES.add("$100");
-        PRIZES.add("$10");
-        PRIZES.add("$0");
-        PRIZES.add("$0");
-        PRIZES.add("$0");
+
+        for (int i = 8; i > 0; i--) {
+            double value = Math.pow(10, (i - 3));
+            if (i < 4) {
+                value = 0;
+            }
+            PRIZES.add(("$" + value).split("\\.")[0]);
+        }
+
+        // print out the prizes
+        System.out.println("Prizes are...");
+        PRIZES.printInLine();
 
         // add 1 - MAX_NUMBER to a new StrLinkedList as strings
         StrLinkedList possibleNumbersList = new StrLinkedList();
