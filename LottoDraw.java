@@ -42,14 +42,21 @@ public class LottoDraw {
         // the list of prizes
         final StrLinkedList PRIZES = new StrLinkedList();
 
-        // add the prizes to the list
+        // the Min matches to recieve a prize
+        final int MIN_MATCHES = 1;
 
-        for (int i = 8; i > 0; i--) {
-            double value = Math.pow(10, (i - 3));
-            if (i < 4) {
+        // add the prizes to the list
+        for (int i = 7; i > 0; i--) {
+            // the value of the prize based of 10^2
+            double value = Math.pow(10, (i - (MIN_MATCHES - 1)));
+
+            // check for the MIN_MATCHES for when to start setting the value to 0
+            if (i < MIN_MATCHES) {
                 value = 0;
             }
-            PRIZES.add(("$" + value).split("\\.")[0]);
+
+            // add the prize to the list and remove the decimal point from the value
+            PRIZES.add("$" + String.format("%12f", value).split("\\.")[0]);
         }
 
         // print out the prizes
