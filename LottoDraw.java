@@ -43,7 +43,10 @@ public class LottoDraw {
         final StrLinkedList PRIZES = new StrLinkedList();
 
         // the Min matches to recieve a prize
-        final int MIN_MATCHES = 1;
+        final int MIN_MATCHES = 3;
+
+        // the prize money that will be given out
+        int PRIZE_MONEY = 0;
 
         // add the prizes to the list
         for (int i = 7; i > 0; i--) {
@@ -56,7 +59,7 @@ public class LottoDraw {
             }
 
             // add the prize to the list and remove the decimal point from the value
-            PRIZES.add("$" + String.format("%12f", value).split("\\.")[0]);
+            PRIZES.add("$" + String.format("%f", value).split("\\.")[0]);
         }
 
         // print out the prizes
@@ -68,7 +71,7 @@ public class LottoDraw {
         for (int i = 1; i <= MAX_NUMBER; i++) {
             possibleNumbersList.add(Integer.toString(i));
         }
-        System.out.println("Possible Numbers are...");
+        System.out.println("\nPossible Numbers are...");
         possibleNumbersList.printInLine();
 
         // randomly select WINNING_NUMBERS amount of the numbers from
@@ -116,9 +119,11 @@ public class LottoDraw {
             }
 
             // print out the results and what the ticket won
-            System.out.print("Ticket(" + (i + 1) + ") " + "wins: " + PRIZES.getValueAt(matches) + ", ");
+            String prize = PRIZES.getValueAt(matches);
+            PRIZE_MONEY += Integer.parseInt(prize.substring(1));
+            System.out.print("Ticket(" + (i + 1) + ") " + "wins: " + prize + ", ");
             ticket.printInLine();
         }
-
+        System.out.println("\nTotal Prize Money: $" + PRIZE_MONEY + ".00");
     }
 }
