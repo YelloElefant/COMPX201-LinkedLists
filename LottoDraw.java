@@ -45,7 +45,7 @@ public class LottoDraw {
         // the list of prizes
         final StrLinkedList PRIZES = new StrLinkedList();
         // the Min matches to recieve a prize
-        final int MIN_MATCHES = 2;
+        final int MIN_MATCHES = 5;
         // the prize money that will be given out
         int prizeMoney = 0;
         // the ticket cost
