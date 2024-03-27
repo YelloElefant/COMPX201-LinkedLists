@@ -46,7 +46,13 @@ public class LottoDraw {
         final int MIN_MATCHES = 3;
 
         // the prize money that will be given out
-        int PRIZE_MONEY = 0;
+        int prizeMoney = 0;
+
+        // the ticket cost
+        final int TICKET_COST = 10;
+
+        // total ticket sales
+        final int TOTAL_SALES = TICKETS * TICKET_COST;
 
         // add the prizes to the list
         for (int i = 7; i > 0; i--) {
@@ -120,10 +126,16 @@ public class LottoDraw {
 
             // print out the results and what the ticket won
             String prize = PRIZES.getValueAt(matches);
-            PRIZE_MONEY += Integer.parseInt(prize.substring(1));
             System.out.print("Ticket(" + (i + 1) + ") " + "wins: " + prize + ", ");
             ticket.printInLine();
+
+            // adding the prize that the ticket won to the total prize money
+            prizeMoney += Integer.parseInt(prize.substring(1));
         }
-        System.out.println("\nTotal Prize Money: $" + PRIZE_MONEY + ".00");
+        // printing out the total prize money
+        System.out.println("\nTotal Prize Money: $" + prizeMoney + ".00");
+        System.out.println("Total Sales: $" + TOTAL_SALES + ".00");
+        System.out.println("Total Profit: $" + (TOTAL_SALES - prizeMoney) + ".00");
+
     }
 }
