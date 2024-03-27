@@ -128,9 +128,8 @@ public class LottoDraw {
 
             // print out the results and what the ticket won
             String prize = PRIZES.getValueAt(matches);
-            // System.out.print("Ticket(" + (i + 1) + ") " + "wins: " + prize + ", (matches:
-            // " + matches + "), ");
-            // ticket.printInLine();
+            System.out.print("Ticket(" + (i + 1) + ") " + "wins: " + prize + ", (matches:" + matches + "), ");
+            ticket.printInLine();
 
             // adding the prize that the ticket won to the total prize money
             prizeMoney += Integer.parseInt(prize.substring(1));
