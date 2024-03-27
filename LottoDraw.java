@@ -126,7 +126,7 @@ public class LottoDraw {
 
             // print out the results and what the ticket won
             String prize = PRIZES.getValueAt(matches);
-            System.out.print("Ticket(" + (i + 1) + ") " + "wins: " + prize + ", ");
+            System.out.print("Ticket(" + (i + 1) + ") " + "wins: " + prize + ", (matches: " + matches + "), ");
             ticket.printInLine();
 
             // adding the prize that the ticket won to the total prize money
@@ -134,6 +134,7 @@ public class LottoDraw {
         }
         // printing out the total prize money
         System.out.println("\nTotal Prize Money: $" + prizeMoney + ".00");
+        System.out.println("Total Ticket Sold: " + TICKETS);
         System.out.println("Total Sales: $" + TOTAL_SALES + ".00");
         System.out.println("Total Profit: $" + (TOTAL_SALES - prizeMoney) + ".00");
 
